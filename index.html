@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="timerContainer">
+        <div class="hours">00</div>
+        <span>:</span>
+        <div class="minutes">00</div>
+        <span>:</span>
+        <div class="seconds">00</div>
+        <span>:</span>
+        <div class="miliseconds">000</div>
+      </div>
+      <div class="controls">
+        <button class="setTime" onclick="setTime()">Set Time</button>
+        <button class="start" onclick="start()">Start</button>
+        <button class="stop" onclick="stop()">Stop</button>
+        <button class="reset" onclick="reset()">Reset</button>
+      </div>
+
+      <div class="setForm">
+        <form action="#" onsubmit="set(event)">
+          <input type="number" class="setHours" placeholder="Hours" required />
+          <input
+            type="number"
+            class="setminutes"
+            placeholder="Minutes"
+            required
+          />
+          <input
+            type="number"
+            class="setseconds"
+            placeholder="Seconds"
+            required
+          />
+          <input
+            type="number"
+            class="setMiliseconds"
+            placeholder="Miliseconds"
+            required
+          />
+          <input type="submit" value="Set" />
+        </form>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
