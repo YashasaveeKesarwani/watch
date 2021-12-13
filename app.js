@@ -1,10 +1,10 @@
-let hours = document.querySelector(".hours");
+let h = document.querySelector(".h");
 let minutes = document.querySelector(".minutes");
-let seconds = document.querySelector(".seconds");
-let miliseconds = document.querySelector(".miliseconds");
+let sec = document.querySelector(".sec");
+let milisec = document.querySelector(".milisec");
 let startStop = 0;
-let interval, sethours, setminutes, setseconds, setmiliseconds;
-let [localhrs, localminutes, localseconds, localmilliseconds] = [0, 0, 0, 0];
+let interval, seth, setminutes, setsec, setmilisec;
+let [localhrs, localminutes, localsec, localmillisec] = [0, 0, 0, 0];
 
 function setTime() {
   document.querySelector(".setForm").style.display = "block";
@@ -22,38 +22,38 @@ function reset() {
   clearInterval(interval);
   localhrs = 0;
   localminutes = 0;
-  localseconds = 0;
-  localmilliseconds = 0;
-  hours.innerHTML = "00";
+  localsec = 0;
+  localmillisec = 0;
+  h.innerHTML = "00";
   minutes.innerHTML = "00";
-  seconds.innerHTML = "00";
-  miliseconds.innerHTML = "000";
+  sec.innerHTML = "00";
+  milisec.innerHTML = "000";
 }
 
 function set(event) {
   event.preventDefault();
-  sethours = document.querySelector(".setHours").value;
+  seth = document.querySelector(".seth").value;
   setminutes = document.querySelector(".setminutes").value;
-  setseconds = document.querySelector(".setseconds").value;
-  setmiliseconds = document.querySelector(".setMiliseconds").value;
+  setsec = document.querySelector(".setsec").value;
+  setmilisec = document.querySelector(".setMilisec").value;
 }
 
 function display() {
   if (
-    sethours == localhrs &&
+    seth == localhrs &&
     setminutes == localminutes &&
-    setseconds == localseconds &&
-    setmiliseconds == localmilliseconds
+    setsec == localsec &&
+    setmilisec == localmillisec
   ) {
     clearInterval(interval);
     alert("Done");
   } else {
-    localmilliseconds += 10;
-    if (localmilliseconds == 1000) {
-      localmilliseconds = 0;
-      localseconds++;
-      if (localseconds == 60) {
-        localseconds = 0;
+    localmillisec += 10;
+    if (localmillisec == 1000) {
+      localmillisec = 0;
+      localsec++;
+      if (localsec == 60) {
+        localsec = 0;
         localminutes++;
         if (localminutes == 60) {
           localminutes = 0;
@@ -61,12 +61,12 @@ function display() {
         }
       }
     }
-    hours.innerHTML = localhrs;
+    h.innerHTML = localhrs;
 
     minutes.innerHTML = localminutes;
 
-    seconds.innerHTML = localseconds;
+    sec.innerHTML = localsec;
 
-    miliseconds.innerHTML = localmilliseconds;
+    milisec.innerHTML = localmillisec;
   }
 }
